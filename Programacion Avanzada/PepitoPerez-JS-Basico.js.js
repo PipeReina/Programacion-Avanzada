@@ -1,15 +1,14 @@
 /////////////////////////////////////////////////////////////////////////// numero par o impar
 
 var f=function(x){
-    let t = x/2;
-    if(t%2===0){
+    if(x%2===0){
         console.log("el numero "+x+" es un numero par")
     }else{
         console.log("el numero "+x+" es un numero impar")
 
     }
 }
-f(4);
+f(10);
 
 /////////////////////////////////////////////////////////////////////////// triangulo escaleno, isoceles o equilatero
 
@@ -26,8 +25,9 @@ function triangulo(a,b,c,){
 triangulo(4,4,4)
 
 /////////////////////////////////////////////////////////////////////////// ecuacion cuadratica tiene solucion real 
+var d;
 const ecuacion = (a,b,c)=>{
-    var d = (b * b - ((4 * a )* c));
+    d = (b * b - ((4 * a )* c));
     if (d>= 0) {
         console.log("La funcion : "+a+"x^2 "+b+"x "+c+" Tiene Solucion Real")
 
@@ -39,10 +39,10 @@ ecuacion(1,2,3);
 
 /////////////////////////////////////////////////////////////////////////// Numeros Primos
 
+var x,i;
 function primo(a){
-    var x;
 
-    for (var i = 2;i<a;i++){
+    for (i = 2;i<a;i++){
         if(a%i===0){
             x=false;
             break
@@ -89,12 +89,17 @@ var z=function(a,b,c){
 }
 z(6,2,8);
 
-/////////////////////////////////////////////////////////////////////////// Descuanto de Decenas
+/////////////////////////////////////////////////////////////////////////// Mayor de 3 numeros
+
+var precioDocena = 60000;
+var precioT;
+var des = 0;
+var desReal;
+var precioTotalDes
 
 function calcularD(decenas){
-    var precioDocena = 60000;
-    var precioT = ((decenas * 12) * precioDocena);
-    var des = 0;
+
+    precioT = ((decenas * 12) * precioDocena);
 
     if (decenas > 10) {
         des = 0.2;
@@ -103,8 +108,8 @@ function calcularD(decenas){
     } else if (decenas > 1) {
         des = 0.1;
     }
-    var desReal = precioT * des;
-    var precioTotalDes = precioT - desReal;
+    desReal = precioT * des;
+    precioTotalDes = precioT - desReal;
 
     console.log("El descuento por la compra de "+decenas+" decenas es de: "+ desReal);
     console.log("El valor total de la compra es de: "+precioTotalDes+" con el descuento del: "+desReal+", el total sin descuento es de: "+precioT);
@@ -112,4 +117,4 @@ function calcularD(decenas){
 
 }
 
-calcularD(15)
+calcularD(10)
